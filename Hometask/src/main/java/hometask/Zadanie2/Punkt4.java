@@ -43,23 +43,27 @@ public class Punkt4 {
     System.out.println(Arrays.toString(arr));
     
 // Вывод всех четных элементов массива
+System.out.println("Четные элементы");
     for (int i = 0; i < arr.length; i++){
-        if (i%2 == 0){
+        if (arr[i]%2 == 0){
             System.out.print(arr[i] + " ");
         }
     }
         System.out.println();
-//Вывод всех не четных элементов массива       
+//Вывод всех не четных элементов массива  
+System.out.println("Не четные элементы");
+
         for (int i = 0; i < arr.length; i++){
-        if (i%2!=0){
+        if (arr[i]%2!=0){
             System.out.print(arr[i] + " ");
         }
     }
         System.out.println();
 //Сумма элементов кратных 7
+
         int sum7 = 0;
         for (int i = 0; i < arr.length; i++){
-        if (i%7 == 0){
+        if (arr[i]%7 == 0){
             sum7 = sum7 + arr[i];
         }
     }
@@ -67,7 +71,7 @@ public class Punkt4 {
 // Произведение элементов кратных 3
     int sum3 = 1;
         for (int i = 0; i < arr.length; i++){
-        if (i%3 == 0){
+        if (arr[i]%3 == 0){
             sum3 = sum3 * arr[i];
         }
     }
