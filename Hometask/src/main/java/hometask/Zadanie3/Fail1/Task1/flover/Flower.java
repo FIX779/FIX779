@@ -9,15 +9,15 @@ package hometask.Zadanie3.Fail1.Task1.flover;
  *
  * @author FIX
  */
-public abstract class Flower {
+public class Flower {
 
     protected double price;
     protected String name;
-    private int length;
+    public int lardg;
     private int timer;
 
-    public Flower(int length, int time) {
-        this.length = length;
+    public Flower(int lardg, int time) {
+        this.lardg = lardg;
         this.timer = time;
     }
 
@@ -29,8 +29,8 @@ public abstract class Flower {
         return name;
     }
 
-    public int getLength() {
-        return length;
+    public int getLardg() {
+        return lardg;
     }
 
     public int getTime() {

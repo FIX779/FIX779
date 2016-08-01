@@ -5,36 +5,40 @@
  */
 package hometask.Zadanie3.Fail1.Task1;
 
-
 import hometask.Zadanie3.Fail1.Task1.flover.Flower;
-import java.util.ArrayList;
+import hometask.Zadanie3.Fail1.Task1.flover.Rose;
 
 /**
  *
  * @author FIX
  */
-public class Buket extends ArrayList<Flower> {
+public class Buket {
 
-    public double getBuketPrice() {
+    int i = 0;
+    int y = 3;
+    public Flower[] arr = new Flower[y];
+    private double price;
+    private Acces[] acc;
 
-        double summ = 0;
-        for (Flower f : this) {
-            summ = summ + f.getPrice();
-        }
-        summ = summ + Acces.BANT.getPrice() + Acces.BUMAGA.getPrice();
-        return summ;
+    public void setFlower(Flower flowers) {
+        arr[i] = flowers;
+        i++;
+
     }
 
-    public void pe4at() {
-
-        for (Flower f : this) {
-            System.out.println(f.getName() + " " + f.getPrice()
-                    + " грн., длинна ствола: " + f.getLength()
-                    + " см. Срезан " + f.getTime() + " часов назад");
+    public double getPrice() {
+        price = 0;
+        for (int i = 0; i < (y); i++) {
+            price = price + arr[i].getPrice();
         }
+        return price;
     }
 
-    public void sort(){
-     
+    public void getFlower() {
+        for (int i = 0; i < y; i++) {
+            System.out.println(arr[i].getName() + " " + arr[i].getLardg()
+                    + " " + arr[i].getTime() + " " + arr[i].getPrice());
+        }
+
     }
 }

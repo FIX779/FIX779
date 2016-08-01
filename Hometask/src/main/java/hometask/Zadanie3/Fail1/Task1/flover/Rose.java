@@ -16,6 +16,6 @@ public class Rose extends Flower {
         price = 25;
         name = "Роза";
     }
-    
 
+    
 }
