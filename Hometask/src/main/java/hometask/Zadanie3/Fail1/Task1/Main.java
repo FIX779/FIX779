@@ -5,9 +5,9 @@
  */
 package hometask.Zadanie3.Fail1.Task1;
 
-import hometask.Zadanie3.Fail1.Task1.flover.Flower;
 import hometask.Zadanie3.Fail1.Task1.flover.Rose;
 import hometask.Zadanie3.Fail1.Task1.flover.Tulip;
+
 
 /**
  *
@@ -15,16 +15,26 @@ import hometask.Zadanie3.Fail1.Task1.flover.Tulip;
  */
 public class Main {
 
+    
+    static int min = 30;
+    static int max = 40;
+
     public static void main(String[] args) {
 
+        
         Buket buket = new Buket();
-        buket.setFlower(new Rose(22, 3));
-        buket.setFlower(new Tulip(43, 8));
-        buket.setFlower(new Rose(43, 6));
+        buket.setFlower(new Rose(35, 2));
+        buket.setFlower(new Tulip(35, 3));
+        buket.setFlower(new Rose(30, 2));
+        buket.setFlower(new Tulip(15, 1));
+        buket.setFlower(new Rose(25, 4));
 
-        System.out.println("Цена букета= " + buket.getPrice());
+        System.out.println("Букет который вы собрали стоит = " + buket.getPrice()
+                + " также в стоимость входит цена банта и бумаги (10 и 15 грн. сообтветственно)");
+
+        buket.sortBuket();
         buket.getFlower();
 
+        buket.getLardgGrad(min, max);
     }
-
 }

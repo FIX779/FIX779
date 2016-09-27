@@ -6,7 +6,8 @@
 package hometask.Zadanie3.Fail1.Task1;
 
 import hometask.Zadanie3.Fail1.Task1.flover.Flower;
-import hometask.Zadanie3.Fail1.Task1.flover.Rose;
+import java.util.Arrays;
+import java.util.Comparator;
 
 /**
  *
@@ -14,11 +15,12 @@ import hometask.Zadanie3.Fail1.Task1.flover.Rose;
  */
 public class Buket {
 
+    
+    int y = 5;
     int i = 0;
-    int y = 3;
+    
     public Flower[] arr = new Flower[y];
     private double price;
-    private Acces[] acc;
 
     public void setFlower(Flower flowers) {
         arr[i] = flowers;
@@ -28,17 +30,41 @@ public class Buket {
 
     public double getPrice() {
         price = 0;
-        for (int i = 0; i < (y); i++) {
-            price = price + arr[i].getPrice();
+        for (int j = 0; j < (y); j++) {
+            price = price + arr[j].getPrice();
         }
+        price = price + Acces.BANT.getPrice() + Acces.BUMAGA.getPrice();
         return price;
     }
 
     public void getFlower() {
         for (int i = 0; i < y; i++) {
-            System.out.println(arr[i].getName() + " " + arr[i].getLardg()
-                    + " " + arr[i].getTime() + " " + arr[i].getPrice());
+            System.out.println(arr[i].getName() + ". Длинна стебля: " + arr[i].getLardg()
+                    + "см. Цветок срезан " + arr[i].getTime() + " часа. Цена "
+                    + arr[i].getPrice() + "грн.");
         }
+    }
 
+    public void getLardgGrad(int min, int max) {
+
+        for (int i = 0; i < y; i++) {
+            if (arr[i].getLardg() > min & arr[i].getLardg() < max) {
+                System.out.println("Цветы входящие в рамки " + arr[i].getName()+
+                        " "+arr[i].getLardg()+" cм");
+            }
+        }
+    }
+
+    public static class BouquetComparator implements Comparator<Flower> {
+
+        @Override
+        public int compare(Flower firstVeg, Flower secondVeg) {
+            return (firstVeg.getTime() - secondVeg.getTime());
+        }
+    }
+
+    public void sortBuket() {
+        BouquetComparator comp = new BouquetComparator();
+        Arrays.sort(arr, comp);
     }
 }
